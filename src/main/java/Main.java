@@ -9,7 +9,7 @@ public class Main {
         File ontoFile = new File("test.owl");
         OntologyConnectionData connectionData = new OntologyConnectionData(ontoFile, "testOnto");
         IOntologyRepository ontologyRepository = new OntologyRepositoryImpl();
-        ((OntologyRepositoryImpl) ontologyRepository).createConnection(connectionData);
+        ontologyRepository.createConnection(connectionData);
         ontologyRepository.addOntClass("Test");
         ontologyRepository.addOntClass("TestChild");
         ontologyRepository.saveOntology();
