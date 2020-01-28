@@ -1,11 +1,8 @@
 package ontology.system.repository;
 
-import org.apache.jena.ontology.Individual;
-import org.apache.jena.ontology.OntClass;
-import org.apache.jena.ontology.OntModel;
-import org.apache.jena.ontology.OntProperty;
+import org.apache.jena.ontology.*;
 
-public interface IOntologyRepository {
+public interface IOntologyRepository extends IRepository <OntResource> {
     OntProperty addDatatypedProperty(String individualName, String dtPropertyName, Object typedLiteral);
     //DatatypeProperty addDatatypeProperty(String dtProperty, String propertyName, String ofClass);
 

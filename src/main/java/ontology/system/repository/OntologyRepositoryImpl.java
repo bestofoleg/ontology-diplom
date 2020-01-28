@@ -162,6 +162,7 @@ public class OntologyRepositoryImpl implements IOntologyRepository {
 
     }
 
+    @Override
     public OntResource add(OntResource obj) {
         if (obj == null)
             throw new IllegalArgumentException("resource is not found.");
@@ -172,6 +173,7 @@ public class OntologyRepositoryImpl implements IOntologyRepository {
         return ontModel.createOntResource(obj.getNameSpace() + obj.getLocalName());
     }
 
+    @Override
     public OntResource remove(OntResource obj) {
         return null;
     }
