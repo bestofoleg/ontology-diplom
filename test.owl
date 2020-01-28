@@ -1,0 +1,35 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:j.0="file://D:/JavaProjects/Ontology/test.owl/testOnto/" > 
+  <rdf:Description rdf:about="file://D:/JavaProjects/Ontology/test.owl/testOnto/prop">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file://D:/JavaProjects/Ontology/test.owl/testOnto/NewTestChild">
+    <rdfs:subClassOf rdf:resource="file://D:/JavaProjects/Ontology/test.owl/testOnto/Test"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file://D:/JavaProjects/Ontology/test.owl/testOnto/Test">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file://D:/JavaProjects/Ontology/test.owl/testOnto/TestChild">
+    <rdfs:subClassOf rdf:resource="file://D:/JavaProjects/Ontology/test.owl/testOnto/Test"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file://D:/JavaProjects/Ontology/test.owl/testOnto/name">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file://D:/JavaProjects/Ontology/test.owl/testOnto/TestInstance">
+    <j.0:prop rdf:resource="file://D:/JavaProjects/Ontology/test.owl/testOnto/NewTestInstance"/>
+    <rdf:type rdf:resource="file://D:/JavaProjects/Ontology/test.owl/testOnto/TestChild"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file://D:/JavaProjects/Ontology/test.owl/testOnto/testOnto">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file://D:/JavaProjects/Ontology/test.owl/testOnto/NewTestInstance">
+    <j.0:name>Boo</j.0:name>
+    <rdf:type rdf:resource="file://D:/JavaProjects/Ontology/test.owl/testOnto/TestChild"/>
+  </rdf:Description>
+</rdf:RDF>
