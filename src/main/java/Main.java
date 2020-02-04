@@ -1,12 +1,15 @@
-import ontology.system.connection.data.OntologyConnectionData;
-import ontology.system.repository.IOntologyRepository;
-import ontology.system.repository.OntologyRepositoryImpl;
+import log.parser.ILogParser;
+import log.parser.LogParserImpl;
+import log.parser.entity.IEntity;
+import log.reader.FileLogReaderImpl;
+import log.reader.ILogReader;
 
 import java.io.File;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        File ontoFile = new File("test.owl");
+        /*File ontoFile = new File("test.owl");
         OntologyConnectionData connectionData = new OntologyConnectionData(ontoFile, "testOnto");
         IOntologyRepository ontologyRepository = new OntologyRepositoryImpl();
         ontologyRepository.createConnection(connectionData);
@@ -24,8 +27,14 @@ public class Main {
         ontologyRepository.addDatatypedProperty(
                 "NewTestInstance",
                 "name",
-                "Boo"
+                 "Boo"
         );
-        ontologyRepository.saveOntology();
+        ontologyRepository.saveOntology();*/
+
+        File file = new File("test.log");
+        ILogReader logReader = new FileLogReaderImpl(file);
+        ILogParser logParser = new LogParserImpl();
+        List<IEntity> entities = logParser.getEntitiesFromLogs(logReader);
+        entities.forEach(System.out::println);
     }
 }
