@@ -9,9 +9,9 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class LogParserImpl implements ILogParser {
-    private static final Pattern EXCEPTION_NAME_PATTERN = Pattern.compile("\\.([^\\.]*)Exception");
+    private static final Pattern EXCEPTION_NAME_PATTERN = Pattern.compile("\\.([^\\.|^\\(|^\\)|^\\s]*)Exception");
 
-    private static final Pattern EXCEPTION_MESSAGE_PATTERN = Pattern.compile("Exception: (.*)");
+    private static final Pattern EXCEPTION_MESSAGE_PATTERN = Pattern.compile("Exception: (.*[^\\\n])");
 
     @Override
     public List<IEntity> getEntitiesFromLogs(ILogReader logReader) {
