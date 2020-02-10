@@ -1,11 +1,4 @@
-import log.parser.ILogParser;
-import log.parser.LogParserImpl;
-import log.parser.entity.IEntity;
-import log.reader.FileLogReaderImpl;
-import log.reader.ILogReader;
-
-import java.io.File;
-import java.util.List;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
     public static void main(String[] args) {
@@ -31,10 +24,15 @@ public class Main {
         );
         ontologyRepository.saveOntology();*/
 
-        File file = new File("test.log");
+        /*File file = new File("test.log");
         ILogReader logReader = new FileLogReaderImpl(file);
         ILogParser logParser = new LogParserImpl();
         List<IEntity> entities = logParser.getEntitiesFromLogs(logReader);
-        entities.forEach(System.out::println);
+        entities.forEach(System.out::println);*/
+
+        ClassPathXmlApplicationContext context =
+                new ClassPathXmlApplicationContext("context.xml");
+        ITestClass test = (ITestClass) context.getBean("testObject");
+        test.test(null);
     }
 }
